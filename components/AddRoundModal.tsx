@@ -88,7 +88,7 @@ export default function AddRoundModal({
   // Step 3: All players enter bids (5-sets player already locked at 5)
   const handleBidChange = (playerId: string, value: string) => {
     const num = value === '' ? '' : Math.max(0, Number(value))
-    setBids((prev) => ({ ...prev, [playerId]: num }))
+    setBids((prev): Record<string, number | string> => ({ ...prev, [playerId]: num }))
   }
 
   const allBidsEntered = () => {
@@ -124,7 +124,7 @@ export default function AddRoundModal({
   // Step 4: Enter actual wins
   const handleActualWinChange = (playerId: string, value: string) => {
     const num = value === '' ? '' : Math.max(0, Number(value))
-    setActualWins((prev) => ({ ...prev, [playerId]: num }))
+    setActualWins((prev): Record<string, number | string> => ({ ...prev, [playerId]: num }))
   }
 
   const allActualWinsEntered = () => {
