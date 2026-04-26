@@ -30,8 +30,8 @@ export default function AddRoundModal({
   const [step, setStep] = useState<Step>('five-sets-check')
   const [fiveSetsPlayerId, setFiveSetsPlayerId] = useState<string | null>(null)
   const [powerSuit, setPowerSuit] = useState<Suit | null>(null)
-  const [bids, setBids] = useState<Record<string, number>>({})
-  const [actualWins, setActualWins] = useState<Record<string, number>>({})
+  const [bids, setBids] = useState<Record<string, number | string>>({})
+  const [actualWins, setActualWins] = useState<Record<string, number | string>>({})
   const [error, setError] = useState<string>('')
 
   const MIN_OTHER_BID = 2
