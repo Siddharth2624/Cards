@@ -1,4 +1,4 @@
-import { GameState, Player, Round } from './types'
+import { GameState, Player, Round, Bid } from './types'
 
 const STORAGE_KEY = 'card-game-scorer'
 

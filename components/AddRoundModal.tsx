@@ -100,7 +100,7 @@ export default function AddRoundModal({
       const bid = bids[player.id]
       if (bid === undefined || bid === '') return false
       if (player.id === fiveSetsPlayerId) {
-        if (bid !== FIVE_SETS_BID) return false
+        if (Number(bid) !== FIVE_SETS_BID) return false
       } else {
         if (Number(bid) < MIN_OTHER_BID) return false
       }
@@ -404,7 +404,7 @@ export default function AddRoundModal({
                 </h3>
                 <div className="space-y-3">
                   {players.map((player) => {
-                    const playerBid = bids[player.id] ?? 0
+                    const playerBid = Number(bids[player.id] ?? 0)
                     const actualWin = actualWins[player.id]
                     const success = actualWin !== undefined && actualWin !== '' && Number(actualWin) >= playerBid
                     const scoreChange = success ? playerBid : -playerBid
@@ -456,7 +456,7 @@ export default function AddRoundModal({
                   </h3>
                   <div className="space-y-2">
                     {players.map((player) => {
-                      const playerBid = bids[player.id] ?? 0
+                      const playerBid = Number(bids[player.id] ?? 0)
                       const actualWin = Number(actualWins[player.id]) || 0
                       const success = actualWin >= playerBid
                       const scoreChange = success ? playerBid : -playerBid
