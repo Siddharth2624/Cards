@@ -9,7 +9,7 @@ interface ScoreBoardProps {
 }
 
 export default function ScoreBoard({ players, onUpdateName }: ScoreBoardProps) {
-  const maxScore = Math.max(...players.map((p) => p.score))
+  const maxScore = 20;
   const leaders = players.filter((p) => p.score === maxScore && maxScore > 0)
 
   return (
